@@ -19,6 +19,8 @@ public class Escuderia {
         return piloto_2;
     }
     public void Imprimir(){
-        System.out.println("- - - - - "+getMarca()+" - - - - -");
+        System.out.println("- - - - - - "+getMarca()+" - - - - - -");
+        System.out.println("Piloto: "+getPiloto_1());
+        System.out.println("Piloto: "+getPiloto_2());
     }
 }
