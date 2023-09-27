@@ -4,6 +4,7 @@ public class Cars4 {
     
     public static void main(String[] args) {
         int op = 0; // Variable para las opciones
+        int ContCamp = 0; // Contador de Campeonatos
         Scanner sc = new Scanner(System.in);
         System.out.println("\n------------------------------ Formula 1 -------------------------\n");
 
@@ -17,7 +18,14 @@ public class Cars4 {
 
             switch (op) {
                 case 1:
-                    
+                    if (ContCamp == 0){
+                        
+
+
+
+
+                        ContCamp ++;
+                    }
                     break;
                 case 2:
 
@@ -27,6 +35,9 @@ public class Cars4 {
                     break;
                 case 4:
 
+
+
+                    ContCamp = 0;
                     break;
                 case 5:
 
