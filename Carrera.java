@@ -33,13 +33,14 @@ public class Carrera {
         return no_vueltas;
     }
 
+
+    //METODOS
+
     public void ImprimirPista(){
         System.out.println("Lugar: " + getLugar());
         System.out.println("Kilometraje: " + getKilometraje());
         System.out.println("Número de Vueltas: " + getNo_Vueltas()); 
     }
-
-    //METODOS
 
     public void posiciones(ArrayList<Pilotos> pilotos){
         for(Pilotos piloto : pilotos){
@@ -83,4 +84,64 @@ public class Carrera {
         }
     }
 
+    public void sumarPuntos(ArrayList<Pilotos> pilotos){
+        int i=1;
+        int puntaje;
+        for(Double tiempo : this.resultados.keySet()){
+            for(Pilotos piloto : pilotos){
+                if(this.resultados.get(tiempo)==piloto.getNombre()){
+                    if(i==1){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+25);
+                    }
+                    else if(i==2){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+18);
+                    }
+                    else if(i==3){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+15);
+                    }
+                    else if(i==4){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+12);
+                    }   
+                    else if(i==5){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+10);
+                    }    
+                    else if(i==6){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+8);
+                    }    
+                    else if(i==7){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+6);
+                    }   
+                    else if(i==8){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+4);
+                    } 
+                    else if(i==9){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+2);
+                    }
+                    else if(i==10){
+                        puntaje=piloto.getPuntos();
+                        piloto.setPuntos(puntaje+1);
+                    }
+                }
+            }
+            i++;
+        }
+    }
+
+    public static void iniciarCarrera(Carrera carrera, ArrayList<Pilotos> pilotos){
+        carrera.posiciones(pilotos);
+        carrera.sumarPuntos(pilotos);
+    }
+
+    public static int contador(){
+        return contador;
+    }
 }

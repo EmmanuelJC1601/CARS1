@@ -1,5 +1,6 @@
 import java.util.Calendar;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -45,5 +46,19 @@ public class Campeonato {
                 fecha.roll(Calendar.DAY_OF_MONTH, 7);
             }
         }
+    }
+    public void crearPista(ArrayList<Carrera> carreras){
+        Scanner sc = new Scanner(System.in);
+        sc.next();
+        System.out.println("\nIngresa los datos de la pista");
+        System.out.print("\nAgregar lugar: ");
+        String lugar = sc.nextLine();
+        System.out.print("\nAgregar kilometraje: ");
+        double kilometraje = sc.nextDouble();
+        System.out.println("\nAgregar No.Vueltas: ");
+        int no_vueltas = sc.nextInt();
+        Carrera pista = new Carrera (lugar, kilometraje, no_vueltas);
+        carreras.add(pista);
+        sc.close();
     }
 }
