@@ -6,7 +6,7 @@ public class Cars4 {
         int op = 0; // Variable para las opciones
         int ContCamp = 0; // Contador de Campeonatos
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n------------------------------ Formula 1 -------------------------\n");
+        System.out.println("\n--------------- Formula 1 ---------------\n");
 
         do {
             System.out.println("--------------- Menu de Opciones ---------------\n");
