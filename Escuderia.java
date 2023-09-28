@@ -2,15 +2,16 @@ import java.util.Scanner;
 
 public class Escuderia {
     
-    private String Marca;
+    private String marca;
     Pilotos[] pilotos = new Pilotos[2];
     static int contador_Escu = 0;
 
-    public Escuderia(String Marca){
-        this.Marca = Marca;
+    public Escuderia(String marca){
+        this.marca = marca;
         contador_Escu += 1;
     }
-    public Escuderia AgregarPIlotos(){
+    
+    public void AgregarPIlotos(){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
             sc.next();
