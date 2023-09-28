@@ -3,6 +3,10 @@ import java.util.*;
 public class Cars4 {
     
     public static void main(String[] args) {
+        ArrayList<Pilotos> pilotos= new ArrayList<>();
+        ArrayList<Carrera> carreras= new ArrayList<>();
+        ArrayList<String> fechas= new ArrayList<>();
+        
         int op = 0; // Variable para las opciones
         int ContCamp = 0; // Contador de Campeonatos
         Scanner sc = new Scanner(System.in);
