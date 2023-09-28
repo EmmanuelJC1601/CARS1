@@ -12,7 +12,7 @@ public class Carrera {
     private double kilometraje;
     private int no_vueltas;
     //private Pilotos[] piloto_car = new Pilotos[9];
-    private static int contador;
+    private static int contador=0;
 
     //CONSTRUCTORES
     public Carrera(String lugar, double kilometraje, int no_vueltas){

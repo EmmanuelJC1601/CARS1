@@ -1,17 +1,18 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Escuderia {
     
     private String marca;
-    Pilotos[] pilotos = new Pilotos[2];
+    private Pilotos[] pilotos = new Pilotos[2];
     static int contador_Escu = 0;
 
     public Escuderia(String marca){
         this.marca = marca;
         contador_Escu += 1;
     }
-    
-    public void AgregarPIlotos(){
+
+    public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
             sc.next();
@@ -23,7 +24,8 @@ public class Escuderia {
             System.out.println("\nAgregar No.Auto: ");
             int no_carro = sc.nextInt();
             Pilotos piloto = new Pilotos(nombre, nacionalidad, no_carro);
-            pilotos[i] = piloto;
+            this.pilotos[i] = piloto;
+            pilotos.add(piloto);
         }
     
     }

@@ -5,6 +5,7 @@ public class Cars4 {
     public static void main(String[] args) {
         ArrayList<Pilotos> pilotos= new ArrayList<>();
         ArrayList<Carrera> carreras= new ArrayList<>();
+        ArrayList<Escuderia> escuderias= new ArrayList<>();
         ArrayList<String> fechas= new ArrayList<>();
         
         int op = 0; // Variable para las opciones
