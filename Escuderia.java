@@ -20,8 +20,9 @@ public class Escuderia {
             String nombre = sc.nextLine();
             System.out.print("\nAgregar nacionalidad: ");
             String nacionalidad = sc.nextLine();
-            System.out.println("\nAgregar No.Auto: ");
+            System.out.print("\nAgregar No.Auto: ");
             int no_carro = sc.nextInt();
+            sc.nextLine();
             Pilotos piloto = new Pilotos(nombre, nacionalidad, no_carro);
             this.pilotos[i] = piloto;
             pilotos.add(piloto);
