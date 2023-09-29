@@ -7,8 +7,6 @@ public class Cars4 {
         ArrayList<Carrera> carreras= new ArrayList<>();
         ArrayList<Escuderia> escuderias= new ArrayList<>();
         ArrayList<String> fechas= new ArrayList<>();
-        
-        Campeonato Camp;
 
         int op = 0; // Variable para las opciones
         int op2 = 0; // Variable para las opciones del punto 5
@@ -34,7 +32,7 @@ public class Cars4 {
                         String name_Camp = sc.nextLine();
                         System.out.print("\nAgregar año de realización: ");
                         int year_Camp = sc.nextInt();
-                        Camp = new Campeonato(name_Camp, year_Camp);
+                        Campeonato Camp = new Campeonato(name_Camp, year_Camp);
 
                         for(int i = 0; i < 10; i++){
                             System.out.println("\n--------------- Escuderias ---------------");
@@ -86,7 +84,7 @@ public class Cars4 {
                     int num_Carre = sc.nextInt();
 
                     if(num_Carre <= contCarrera){
-
+                        Carrera carre_consul = carreras.get(num_Carre);
                     }else{
                         System.out.println("... ... ... Carrera Inexistente ... ... ...");
                     }
