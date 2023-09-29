@@ -84,13 +84,26 @@ public class Cars4 {
                     int num_Carre = sc.nextInt();
 
                     if(num_Carre <= contCarrera){
-                        Carrera carre_consul = carreras.get(num_Carre);
+                        Carrera carre_consul = carreras.get(num_Carre - 1);
+                        carre_consul.mostrarResultados();
                     }else{
-                        System.out.println("... ... ... Carrera Inexistente ... ... ...");
+                        System.out.println("... .... ... Carrera Inexistente ... .... ...");
                     }
                     break;
+
                 case 4:
-                    
+                    if(contCarrera == 23){
+                        System.out.println("\n---------- El Campeonato ha terminado ----------");
+                        ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
+                        Comparator<Pilotos> comparador = Comparator.comparingInt(Pilotos::getPuntos);
+
+                        Collections.sort(copy_Pilotos, comparador);
+                        int i = 1;
+                        
+                        ContCamp --;
+                    }else{
+                        System.out.println("\n... .... ... Campeonato en Curso ... .... ...");
+                    }
 
 
                     ContCamp = 0;
@@ -143,11 +156,6 @@ public class Cars4 {
                     System.out.println("!!! ERROR !!! Opcion NO Disponible");
                     break;
             }
-
-
-
-
-
 
         } while (op != 6);
         sc.close();
