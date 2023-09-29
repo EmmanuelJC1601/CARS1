@@ -32,11 +32,11 @@ public class Cars4 {
                         String name_Camp = sc.nextLine();
                         System.out.print("\nAgregar año de realización: ");
                         int year_Camp = sc.nextInt();
+                        sc.nextLine();
                         Campeonato Camp = new Campeonato(name_Camp, year_Camp);
 
                         for(int i = 0; i < 10; i++){
                             System.out.println("\n--------------- Escuderias ---------------");
-                            sc.nextLine();
                             System.out.print("\nAgregar Nombre: ");
                             String name_Esc = sc.nextLine();
                             Camp.RegistrarEscuderia(escuderias, pilotos, name_Esc);
