@@ -24,7 +24,7 @@ public class Cars4 {
             System.out.print("5. Mostrar Elementos\n6. Cerrar Programa\n");
             System.out.print("Opcion: ");
             op = sc.nextInt();
-            sc.next(); // Eliminar el espacio en blanco
+            sc.nextLine(); // Eliminar el espacio en blanco
 
             switch (op) {
                 case 1:
@@ -38,7 +38,7 @@ public class Cars4 {
 
                         for(int i = 0; i < 10; i++){
                             System.out.println("\n--------------- Escuderias ---------------");
-                            sc.next();
+                            sc.nextLine();
                             System.out.print("\nAgregar Nombre: ");
                             String name_Esc = sc.nextLine();
                             Camp.RegistrarEscuderia(escuderias, pilotos, name_Esc);
@@ -46,7 +46,7 @@ public class Cars4 {
 
                         for(int i = 0; i < 23; i++){
                             System.out.println("\n--------------- Pistas ---------------");
-                            sc.next();
+                            sc.nextLine();
                             System.out.print("\nAgregar Lugar: ");
                             String lug_pis = sc.nextLine();
                             System.out.print("\nAgregar Distancia total: ");
@@ -57,14 +57,19 @@ public class Cars4 {
                             carreras.add(pistas);
                         }
 
-
+                        System.out.println("\n--------------- Fechas ---------------");
+                        Camp.crearCalendario(fechas);
+                        System.out.println("\n-#-#-#- Fechas Creadas Correctamente -#-#-#-");
 
                         ContCamp ++;
+                    }else{
+                        System.out.println("\nYa está en curso un Campeonato, espere a que este finalice");
                     }
                     break;
+
                 case 2:
                     if(Carrera.contador()>contCarrera){
-                        System.out.println("La carrera "+(contCarrera+1)+" ha empezado.");
+                        System.out.println("\n----- La carrera "+(contCarrera+1)+" ha empezado -----");
                         Carrera.iniciarCarrera(carreras.get(contCarrera), pilotos);
                         contCarrera++;
                     }
