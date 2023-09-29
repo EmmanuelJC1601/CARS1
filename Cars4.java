@@ -59,7 +59,7 @@ public class Cars4 {
 
                         System.out.println("\n--------------- Fechas ---------------");
                         Camp.crearCalendario(fechas);
-                        System.out.println("\n-#-#-#- Fechas Creadas Correctamente -#-#-#-");
+                        System.out.println("\n.......... Fechas Creadas Correctamente ..........");
 
                         ContCamp ++;
                     }else{
@@ -69,20 +69,30 @@ public class Cars4 {
 
                 case 2:
                     if(Carrera.contador()>contCarrera){
-                        System.out.println("\n----- La carrera "+(contCarrera+1)+" ha empezado -----");
+                        System.out.println("\n---------- La carrera "+(contCarrera+1)+" ha empezado ----------");
                         Carrera.iniciarCarrera(carreras.get(contCarrera), pilotos);
                         contCarrera++;
                     }
                     else{
-                        System.out.println("No hay pistas suficientes donde correr, crea mas");
+                        System.out.println("\nNo hay pistas suficientes donde correr, crea mas");
                     }
 
                     break;
-                case 3:
 
+                case 3:
+                    System.out.println("\n--------------- Consulta Carreras ---------------");
+                    System.out.println("\t\tSolo puede ver "+ contCarrera + " carrera(s)");
+                    System.out.println("\nNumero de Carrera: ");
+                    int num_Carre = sc.nextInt();
+
+                    if(num_Carre <= contCarrera){
+
+                    }else{
+                        System.out.println("... ... ... Carrera Inexistente ... ... ...");
+                    }
                     break;
                 case 4:
-
+                    
 
 
                     ContCamp = 0;
