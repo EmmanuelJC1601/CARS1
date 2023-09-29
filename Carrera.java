@@ -44,7 +44,7 @@ public class Carrera {
 
     public void posiciones(ArrayList<Pilotos> pilotos){
         for(Pilotos piloto : pilotos){
-            Double tiempo=rand.nextDouble(1.3,3.0);
+            Double tiempo = rand.nextDouble(1.3,3.0);
             if(this.resultados.containsKey(tiempo)){
                 this.resultados.put((tiempo+0.01), piloto.getNombre());
             }
@@ -85,48 +85,48 @@ public class Carrera {
     }
 
     public void sumarPuntos(ArrayList<Pilotos> pilotos){
-        int i=1;
+        int i = 1;
         int puntaje;
         for(Double tiempo : this.resultados.keySet()){
             for(Pilotos piloto : pilotos){
-                if(this.resultados.get(tiempo)==piloto.getNombre()){
-                    if(i==1){
+                if(this.resultados.get(tiempo) == piloto.getNombre()){
+                    if(i == 1){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+25);
                     }
-                    else if(i==2){
+                    else if(i == 2){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+18);
                     }
-                    else if(i==3){
+                    else if(i == 3){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+15);
                     }
-                    else if(i==4){
+                    else if(i == 4){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+12);
                     }   
-                    else if(i==5){
+                    else if(i == 5){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+10);
                     }    
-                    else if(i==6){
+                    else if(i == 6){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+8);
                     }    
-                    else if(i==7){
+                    else if(i == 7){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+6);
                     }   
-                    else if(i==8){
+                    else if(i == 8){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+4);
                     } 
-                    else if(i==9){
+                    else if(i == 9){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+2);
                     }
-                    else if(i==10){
+                    else if(i == 10){
                         puntaje=piloto.getPuntos();
                         piloto.setPuntos(puntaje+1);
                     }
