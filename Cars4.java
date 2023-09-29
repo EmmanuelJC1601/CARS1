@@ -85,6 +85,7 @@ public class Cars4 {
 
                     if(num_Carre <= contCarrera){
                         Carrera carre_consul = carreras.get(num_Carre);
+                        carre_consul.mostrarResultados();
                     }else{
                         System.out.println("... ... ... Carrera Inexistente ... ... ...");
                     }
