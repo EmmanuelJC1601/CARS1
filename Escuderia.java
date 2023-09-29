@@ -15,7 +15,6 @@ public class Escuderia {
     public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
-            sc.nextLine();
             System.out.println("\n---------- Piloto "+ (i + 1) +" ----------");
             System.out.print("\nAgregar nombre: ");
             String nombre = sc.nextLine();
