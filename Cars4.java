@@ -84,7 +84,7 @@ public class Cars4 {
                     int num_Carre = sc.nextInt();
 
                     if(num_Carre <= contCarrera){
-                        Carrera carre_consul = carreras.get(num_Carre);
+                        Carrera carre_consul = carreras.get(num_Carre - 1);
                         carre_consul.mostrarResultados();
                     }else{
                         System.out.println("... ... ... Carrera Inexistente ... ... ...");
