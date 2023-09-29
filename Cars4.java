@@ -8,6 +8,8 @@ public class Cars4 {
         ArrayList<Escuderia> escuderias= new ArrayList<>();
         ArrayList<String> fechas= new ArrayList<>();
         
+        Campeonato Camp;
+
         int op = 0; // Variable para las opciones
         int op2 = 0; // Variable para las opciones del punto 5
         int ContCamp = 0; // Contador de Campeonatos
@@ -22,12 +24,26 @@ public class Cars4 {
             System.out.print("5. Mostrar Elementos\n6. Cerrar Programa\n");
             System.out.print("Opcion: ");
             op = sc.nextInt();
+            sc.next(); // Eliminar el espacio en blanco
 
             switch (op) {
                 case 1:
                     if (ContCamp == 0){
-                        
+                        System.out.println("\n--------------- Campeonato ---------------");
+                        System.out.print("\nAgregar Nombre: ");
+                        String name_Camp = sc.nextLine();
+                        System.out.print("\nAgregar año de realización: ");
+                        int year_Camp = sc.nextInt();
+                        sc.next();
+                        Camp = new Campeonato(name_Camp, year_Camp);
 
+                        for(int i = 0; i < 10; i++){
+                            System.out.println("\n--------------- Escuderias ---------------");
+                            System.out.print("\nAgregar Nombre: ");
+                            String name_Esc = sc.nextLine();
+                            Camp.RegistrarEscuderia(escuderias, pilotos, name_Esc);
+                        }
+                        
 
 
 
