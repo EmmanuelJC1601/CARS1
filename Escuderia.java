@@ -11,7 +11,9 @@ public class Escuderia {
         this.marca = marca;
         contador_Escu += 1;
     }
-
+    public String setMarca(){
+        return marca;
+    }
     public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
