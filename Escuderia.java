@@ -27,7 +27,6 @@ public class Escuderia {
             this.pilotos[i] = piloto;
             pilotos.add(piloto);
         }
-        sc.close();
     }
     /*public void Imprimir(){
         System.out.println("- - - - - - "+getMarca()+" - - - - - -");
