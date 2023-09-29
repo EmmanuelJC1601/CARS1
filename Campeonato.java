@@ -1,8 +1,4 @@
-import java.util.Calendar;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class Campeonato {
