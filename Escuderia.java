@@ -20,6 +20,10 @@ public class Escuderia {
         return puntos;
     }
 
+    public Pilotos[] getPilotos(){
+        return pilotos;
+    }
+
     public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){

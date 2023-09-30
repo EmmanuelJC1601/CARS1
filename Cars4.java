@@ -45,13 +45,13 @@ public class Cars4 {
                     
                         for(int i = 0; i < 2; i++){
                             System.out.println("\n--------------- Pistas ---------------");
-                            sc.nextLine();
                             System.out.print("\nAgregar Lugar: ");
                             String lug_pis = sc.nextLine();
                             System.out.print("\nAgregar Distancia total: ");
                             double kil_pis = sc.nextDouble();
                             System.out.print("\nAgregar Vueltas: ");
                             int vuel_pis = sc.nextInt();
+                            sc.nextLine();
                             Carrera pistas = new Carrera(lug_pis, kil_pis, vuel_pis);
                             carreras.add(pistas);
                         }
@@ -84,7 +84,7 @@ public class Cars4 {
                 case 3:
                     System.out.println("\n--------------- Consulta Carreras ---------------");
                     System.out.println("\t\tSolo puede ver "+ contCarrera + " carrera(s)");
-                    System.out.println("\nNumero de Carrera: ");
+                    System.out.print("\nNumero de Carrera: ");
                     int num_Carre = sc.nextInt();
 
                     if(num_Carre <= contCarrera){
@@ -96,7 +96,7 @@ public class Cars4 {
                     break;
 
                 case 4:
-                    if(contCarrera == 23){
+                    if(contCarrera == 2){
                         System.out.println("\n---------- El Campeonato ha terminado ----------");
                         Campeonato.podioCorredores(pilotos, escuderias);
                         Campeonato.podioConstructores(escuderias);
@@ -119,18 +119,21 @@ public class Cars4 {
                             for (Escuderia escuderia : escuderias){
                                 System.out.println("--- Escuderia Correspondiente ---");
                                 System.out.println("\t\t"+escuderia.getMarca());
-                                for (int i = 0; i < 2; i++){
+                                int i=1;
+                                for (Pilotos pilot : escuderia.getPilotos() ){
                                     System.out.println("------------ Piloto: " + i + "------------");
-                                    Pilotos piloto = pilotos.get(i);
-                                    piloto.Imprimir();
+                                    pilot.Imprimir();
+                                    i++;
                                 }
                             }
                             break;
                         case 2:
                             int j=1;
                             for(Carrera carrera : carreras){
-                                System.out.println("Resultados de la carrera: "+j);
-                                carrera.mostrarResultados();
+                                if(j<=contCarrera){
+                                    System.out.println("Resultados de la carrera: "+j);
+                                    carrera.mostrarResultados();
+                                }
                                 j++;
                             }
                             break;

@@ -59,27 +59,27 @@ public class Carrera {
         for(Double tiempo : this.resultados.keySet()){
             System.out.print("Posicion: "+i+"\tTiempo: "+tiempo+"\tPiloto: "+this.resultados.get(tiempo));
             if(i==1)
-                System.out.print("\tPuntos: 25");
+                System.out.println("\tPuntos: 25");
             else if(i==2)
-                System.out.print("\tPuntos: 18");
+                System.out.println("\tPuntos: 18");
             else if(i==3)
-                System.out.print("\tPuntos: 15");
+                System.out.println("\tPuntos: 15");
             else if(i==4)
-                System.out.print("\tPuntos: 12");
+                System.out.println("\tPuntos: 12");
             else if(i==5)
-                System.out.print("\tPuntos: 10");
+                System.out.println("\tPuntos: 10");
             else if(i==6)
-                System.out.print("\tPuntos: 8");
+                System.out.println("\tPuntos: 8");
             else if(i==7)
-                System.out.print("\tPuntos: 6");
+                System.out.println("\tPuntos: 6");
             else if(i==8)
-                System.out.print("\tPuntos: 4");
+                System.out.println("\tPuntos: 4");
             else if(i==9)
-                System.out.print("\tPuntos: 2");
+                System.out.println("\tPuntos: 2");
             else if(i==10)
-                System.out.print("\tPuntos: 1");
+                System.out.println("\tPuntos: 1");
             else
-                System.out.print("\tPuntos: 0");
+                System.out.println("\tPuntos: 0");
             i++;
         }
     }
