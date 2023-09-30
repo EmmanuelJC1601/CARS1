@@ -57,10 +57,10 @@ public class Cars4 {
                         }
 
                         System.out.println("\n--------------- Fechas ---------------");
-                        camp.crearCalendario(fechas);
-                        for (String fecha : fechas) {
+                        /*for (String fecha : fechas) {
+                            camp.crearCalendario(fechas);
                             System.out.println(fecha);
-                        }
+                        }*/
                         System.out.println("\n.......... Fechas Creadas Correctamente ..........");
 
                         ContCamp ++;
