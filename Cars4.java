@@ -17,7 +17,8 @@ public class Cars4 {
 
         do {
             System.out.println("--------------- Menu de Opciones ---------------\n");
-            System.out.print("1. Crear Campeonato\n2. Iniciar Carrera\n");
+            System.out.print("1. Crear Campeonato/Registrar Escuderias y sus Pilotos\n"
+            +"2. Iniciar Carrera\n");
             System.out.print("3. Consultar Carreras Anteriores\n4. Finalizar Campeonato\n");
             System.out.print("5. Mostrar Elementos\n6. Cerrar Programa\n");
             System.out.print("Opcion: ");
@@ -33,16 +34,16 @@ public class Cars4 {
                         System.out.print("\nAgregar año de realización: ");
                         int year_Camp = sc.nextInt();
                         sc.nextLine();
-                        Campeonato Camp = new Campeonato(name_Camp, year_Camp);
-
-                        for(int i = 0; i < 10; i++){
+                        Campeonato camp = new Campeonato(name_Camp, year_Camp);
+                    
+                        for(int i = 0; i < 2; i++){
                             System.out.println("\n--------------- Escuderias ---------------");
                             System.out.print("\nAgregar Nombre: ");
                             String name_Esc = sc.nextLine();
-                            Camp.RegistrarEscuderia(escuderias, pilotos, name_Esc);
+                            camp.registrarEscuderia(escuderias, pilotos, name_Esc);
                         }
-
-                        for(int i = 0; i < 23; i++){
+                    
+                        for(int i = 0; i < 2; i++){
                             System.out.println("\n--------------- Pistas ---------------");
                             sc.nextLine();
                             System.out.print("\nAgregar Lugar: ");
@@ -56,7 +57,10 @@ public class Cars4 {
                         }
 
                         System.out.println("\n--------------- Fechas ---------------");
-                        Camp.crearCalendario(fechas);
+                        camp.crearCalendario(fechas);
+                        for (String fecha : fechas) {
+                            System.out.println(fecha);
+                        }
                         System.out.println("\n.......... Fechas Creadas Correctamente ..........");
 
                         ContCamp ++;
@@ -94,13 +98,9 @@ public class Cars4 {
                 case 4:
                     if(contCarrera == 23){
                         System.out.println("\n---------- El Campeonato ha terminado ----------");
-                        ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
-                        Comparator<Pilotos> comparador = Comparator.comparingInt(Pilotos::getPuntos);
-
-                        Collections.sort(copy_Pilotos, comparador);
-                        int i = 1;
+                        Campeonato.podioCorredores(pilotos, escuderias);
+                        Campeonato.podioConstructores(escuderias);
                         
-                        ContCamp --;
                     }else{
                         System.out.println("\n... .... ... Campeonato en Curso ... .... ...");
                     }
@@ -116,21 +116,16 @@ public class Cars4 {
                     op2 = sc.nextInt();
                     switch(op2){
                         case 1:
-                        int k=1;    
-                        int contador = 0;
-                        for (Escuderia escuderia : escuderias){
-                            System.out.println("------------ Pilotos Equipo: " + k + "------------");
-                            for (int i = contador; i < contador + 2; contador++){
-                                Pilotos piloto = pilotos.get(i);
-                                piloto.Imprimir();
+                            for (Escuderia escuderia : escuderias){
+                                System.out.println("--- Escuderia Correspondiente ---");
+                                System.out.println("\t\t"+escuderia.getMarca());
+                                for (int i = 0; i < 2; i++){
+                                    System.out.println("------------ Piloto: " + i + "------------");
+                                    Pilotos piloto = pilotos.get(i);
+                                    piloto.Imprimir();
+                                }
                             }
-                            contador += 1;
-                            System.out.println("--- Escuderia Correspondiente ---");
-                            System.out.println(escuderia);
-                            k += 1;
-                        }
                             break;
-
                         case 2:
                             int j=1;
                             for(Carrera carrera : carreras){
@@ -141,7 +136,8 @@ public class Cars4 {
                             break;
 
                         case 3:
-                            
+                            System.out.println("----POSICIONES ACTUALES----");
+                            Campeonato.posiciones(pilotos);
 
                             break;
                         default:

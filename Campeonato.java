@@ -7,17 +7,12 @@ public class Campeonato {
 
     private String nombre;
     private int year;
-    //Carrera[] carreras = new Carrera[23];
-    //Escuderia[] escuderias = new Escuderia[10];
 
-
-    //Pilotos[] pilotos = new Pilotos[20];
-    // Lista de Fechas
     public Campeonato(String nombre, int year){
         this.nombre = nombre;
         this.year = year;
     }
-    public void RegistrarEscuderia(ArrayList<Escuderia> escuderias,ArrayList<Pilotos> pilotos,String nombreEscuderia){
+    public void registrarEscuderia(ArrayList<Escuderia> escuderias,ArrayList<Pilotos> pilotos,String nombreEscuderia){
         Escuderia patron = new Escuderia(nombreEscuderia);
         patron.AgregarPIlotos(pilotos);
         escuderias.add(patron);
@@ -57,4 +52,73 @@ public class Campeonato {
         carreras.add(pista);
         sc.close();
     }
+
+    public static void posiciones(ArrayList<Pilotos> pilotos){
+        ArrayList<Integer> puntos= new ArrayList<>();
+        for(Pilotos piloto : pilotos){
+            puntos.add(piloto.getPuntos());
+        }
+        Collections.sort(puntos);
+        ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
+        int x=1;
+        for(Integer points : puntos){
+            for(Pilotos piloto : copy_Pilotos){
+                if(points==piloto.getPuntos()){
+                    piloto.setPuntos(10000);
+                    System.out.println("Posicion: "+x+"\tPiloto: "+piloto.getNombre()+"\tPuntos: "+points);
+                }
+            }
+            x++;
+        }
+    }
+
+    public static void podioCorredores(ArrayList<Pilotos> pilotos, ArrayList<Escuderia> escuderias){
+        ArrayList<Integer> puntos= new ArrayList<>();
+        for(Pilotos piloto : pilotos){
+            puntos.add(piloto.getPuntos());
+        }
+        Collections.sort(puntos);
+        int x=0;
+        ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
+        for(int i=0;i<3;i++){
+            for(Pilotos piloto : copy_Pilotos){
+                if(puntos.get(i)==piloto.getPuntos()){
+                    piloto.setPuntos(10000);
+                    int numEscuderia=x/2;
+                    /* 
+                    if(i==0){
+
+                    }
+                    else if(i==1){
+
+                    }
+                    else{
+
+                    }*/
+                    System.out.println("Posicion: "+(i+1)+"\tPiloto: "+piloto.getNombre()
+                    +"\tPuntos: "+puntos.get(i)+"\tEscuderia: "+escuderias.get(numEscuderia).getMarca());
+                }
+                x++;
+            }
+        }
+    }
+
+    public static void podioConstructores(ArrayList<Escuderia> escuderias){
+        ArrayList<Integer> puntos= new ArrayList<>();
+        for(Escuderia escuderia : escuderias){
+            puntos.add(escuderia.getPuntos());
+        }
+        Collections.sort(puntos);
+        ArrayList<Escuderia> copy_Escuderias = new ArrayList<>(escuderias);
+        int x=1;
+        for(Integer points : puntos){
+            for(Escuderia escuderia : copy_Escuderias){
+                if(points==escuderia.getPuntos()){
+                    System.out.println("Posicion: "+x+"\tEscuderia: "+escuderia.getMarca()+"\tPuntos: "+points);
+                }
+            }
+            x++;
+        }
+    }
+
 }
