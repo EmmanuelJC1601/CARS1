@@ -57,10 +57,10 @@ public class Cars4 {
                         }
 
                         System.out.println("\n--------------- Fechas ---------------");
-                        /*for (String fecha : fechas) {
-                            camp.crearCalendario(fechas);
+                        camp.crearCalendario(fechas);
+                        for (String fecha : fechas) {
                             System.out.println(fecha);
-                        }*/
+                        }
                         System.out.println("\n.......... Fechas Creadas Correctamente ..........");
 
                         ContCamp ++;
@@ -99,6 +99,9 @@ public class Cars4 {
                     if(contCarrera == 2){
                         System.out.println("\n---------- El Campeonato ha terminado ----------");
                         Campeonato.podioCorredores(pilotos, escuderias);
+                        for (Escuderia constructor : escuderias) {
+                            constructor.sumarPuntos();
+                        }
                         Campeonato.podioConstructores(escuderias);
                         
                     }else{

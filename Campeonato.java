@@ -21,9 +21,8 @@ public class Campeonato {
     public void crearCalendario(ArrayList<String> fechas){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Calendar fecha=Calendar.getInstance();
-        int year = rand.nextInt(45)+1980;
         int month = rand.nextInt(12)+1;
-        fecha.set(Calendar.YEAR, year);
+        fecha.set(Calendar.YEAR, this.year);
         fecha.set(Calendar.MONTH, month);
         int dia = rand.nextInt(fecha.getActualMaximum(Calendar.DAY_OF_MONTH)) + 1;
         fecha.set(Calendar.DAY_OF_MONTH, dia);
@@ -34,7 +33,10 @@ public class Campeonato {
                 fechas.add(fechaFinal);
             }
             else{
-                fecha.roll(Calendar.DAY_OF_MONTH, 7);
+                fecha.add(Calendar.DAY_OF_MONTH, 7);
+                Date fechaSDF = fecha.getTime();
+                String fechaF = sdf.format(fechaSDF);
+                fechas.add(fechaF);
             }
         }
     }
@@ -80,10 +82,10 @@ public class Campeonato {
         }
         Collections.sort(puntos);
         Collections.reverse(puntos);
-        ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
+        //ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
         for(int i=0;i<3;i++){
             int x=0;
-            for(Pilotos piloto : copy_Pilotos){
+            for(Pilotos piloto : pilotos){
                 if(puntos.get(i)==piloto.getPuntos()){
                     //piloto.setPuntos(10000);
                     int numEscuderia=x/2;
@@ -112,10 +114,10 @@ public class Campeonato {
         }
         Collections.sort(puntos);
         Collections.reverse(puntos);
-        ArrayList<Escuderia> copy_Escuderias = new ArrayList<>(escuderias);
+        //ArrayList<Escuderia> copy_Escuderias = new ArrayList<>(escuderias);
         int x=1;
         for(Integer points : puntos){
-            for(Escuderia escuderia : copy_Escuderias){
+            for(Escuderia escuderia : escuderias){
                 if(points==escuderia.getPuntos()){
                     System.out.println("Posicion: "+x+"\tEscuderia: "+escuderia.getMarca()+"\tPuntos: "+points);
                 }
