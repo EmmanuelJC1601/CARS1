@@ -11,10 +11,8 @@ public class Carrera {
     private String lugar;
     private double kilometraje;
     private int no_vueltas;
-    //private Pilotos[] piloto_car = new Pilotos[9];
     private static int contador=0;
 
-    //CONSTRUCTORES
     public Carrera(String lugar, double kilometraje, int no_vueltas){
         this.lugar=lugar;
         this.kilometraje=kilometraje;
@@ -22,7 +20,6 @@ public class Carrera {
         contador++;
     }
 
-    //GETTERS Y SETTERS
     public String getLugar(){
         return lugar;
     }
@@ -32,9 +29,6 @@ public class Carrera {
     public int getNo_Vueltas(){
         return no_vueltas;
     }
-
-
-    //METODOS
 
     public void ImprimirPista(){
         System.out.println("Lugar: " + getLugar());

@@ -69,7 +69,6 @@ public class Campeonato {
         for(Integer points : puntos){
             for(Pilotos piloto : copy_Pilotos){
                 if(points==piloto.getPuntos()){
-                    //piloto.setPuntos(10000);
                     System.out.println("Posicion: "+x+"\tPiloto: "+piloto.getNombre()+"\tPuntos: "+points);
                 }
             }
@@ -84,23 +83,11 @@ public class Campeonato {
         }
         Collections.sort(puntos);
         Collections.reverse(puntos);
-        //ArrayList<Pilotos> copy_Pilotos = new ArrayList<>(pilotos);
         for(int i=0;i<3;i++){
             int x=0;
             for(Pilotos piloto : pilotos){
                 if(puntos.get(i)==piloto.getPuntos()){
-                    //piloto.setPuntos(10000);
                     int numEscuderia=x/2;
-                    /* 
-                    if(i==0){
-
-                    }
-                    else if(i==1){
-
-                    }
-                    else{
-
-                    }*/
                     System.out.println("Posicion: "+(i+1)+"\tPiloto: "+piloto.getNombre()
                     +"\tPuntos: "+puntos.get(i)+"\tEscuderia: "+escuderias.get(numEscuderia).getMarca());
                 }
@@ -116,7 +103,6 @@ public class Campeonato {
         }
         Collections.sort(puntos);
         Collections.reverse(puntos);
-        //ArrayList<Escuderia> copy_Escuderias = new ArrayList<>(escuderias);
         int x=1;
         for(Integer points : puntos){
             for(Escuderia escuderia : escuderias){

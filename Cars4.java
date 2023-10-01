@@ -11,9 +11,9 @@ public class Cars4 {
         HashSet<String> paisesPilotos = new HashSet<String>();
         HashSet<String> paisesParticipantes = new HashSet<String>();
 
-        int op = 0; // Variable para las opciones
-        int op2 = 0; // Variable para las opciones del punto 5
-        int ContCamp = 0; // Contador de Campeonatos
+        int op = 0; 
+        int op2 = 0; 
+        int ContCamp = 0; 
         int contCarrera=0;
         int totalEscuderias;
         int totalPistas=0;
@@ -27,7 +27,7 @@ public class Cars4 {
             System.out.print("5. Mostrar Elementos\n6. Cerrar Programa\n");
             System.out.print("Opcion: ");
             op = sc.nextInt();
-            sc.nextLine(); // Eliminar el espacio en blanco
+            sc.nextLine();
 
             switch (op) {
                 case 1:
@@ -163,6 +163,8 @@ public class Cars4 {
                             for (String lugar : paisesParticipantes) {
                                 System.out.println(lugar);
                             }
+                            paisesPilotos.clear();
+                            paisesParticipantes.clear();
 
                         }else{
                             System.out.println("\n... .... ... Campeonato en Curso ... .... ...");
