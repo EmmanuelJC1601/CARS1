@@ -17,11 +17,13 @@ public class Campeonato {
         patron.AgregarPIlotos(pilotos);
         escuderias.add(patron);
     }
-
+    public String getNombre(){
+        return nombre;
+    }
     public void crearCalendario(ArrayList<String> fechas){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Calendar fecha=Calendar.getInstance();
-        int month = rand.nextInt(12)+1;
+        int month = 3;
         fecha.set(Calendar.YEAR, this.year);
         fecha.set(Calendar.MONTH, month);
         int dia = rand.nextInt(fecha.getActualMaximum(Calendar.DAY_OF_MONTH)) + 1;

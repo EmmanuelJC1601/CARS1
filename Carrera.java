@@ -82,6 +82,7 @@ public class Carrera {
                 System.out.println("\tPuntos: 0");
             i++;
         }
+        System.out.println("");
     }
 
     public void sumarPuntos(ArrayList<Pilotos> pilotos){

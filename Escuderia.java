@@ -27,7 +27,7 @@ public class Escuderia {
     public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
-            System.out.println("\n---------- Piloto "+ (i + 1) +" ----------");
+            System.out.println("\n------------------------ Piloto "+ (i + 1) +" -------------------------");
             System.out.print("\nAgregar nombre: ");
             String nombre = sc.nextLine();
             System.out.print("\nAgregar nacionalidad: ");
@@ -46,9 +46,4 @@ public class Escuderia {
             this.puntos+=piloto.getPuntos();
         }
     }
-    /*public void Imprimir(){
-        System.out.println("- - - - - - "+getMarca()+" - - - - - -");
-        System.out.println("Piloto: "+getPiloto_1());
-        System.out.println("Piloto: "+getPiloto_2());
-    }*/
 }
