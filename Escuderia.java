@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Escuderia {
@@ -24,7 +25,7 @@ public class Escuderia {
         return pilotos;
     }
 
-    public void AgregarPIlotos(ArrayList<Pilotos> pilotos){
+    public void AgregarPIlotos(ArrayList<Pilotos> pilotos, HashSet<String> paisesPilotos){
         Scanner sc = new Scanner(System.in);
         for(int i = 0; i < 2; i++){
             System.out.println("\n------------------------ Piloto "+ (i + 1) +" -------------------------");
@@ -32,6 +33,7 @@ public class Escuderia {
             String nombre = sc.nextLine();
             System.out.print("\nAgregar nacionalidad: ");
             String nacionalidad = sc.nextLine();
+            paisesPilotos.add(nacionalidad);
             System.out.print("\nAgregar No.Auto: ");
             int no_carro = sc.nextInt();
             sc.nextLine();

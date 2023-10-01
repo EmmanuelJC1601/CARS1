@@ -12,15 +12,15 @@ public class Campeonato {
         this.nombre = nombre;
         this.year = year;
     }
-    public void registrarEscuderia(ArrayList<Escuderia> escuderias,ArrayList<Pilotos> pilotos,String nombreEscuderia){
+    public void registrarEscuderia(ArrayList<Escuderia> escuderias,ArrayList<Pilotos> pilotos,String nombreEscuderia, HashSet<String> paisesPilotos){
         Escuderia patron = new Escuderia(nombreEscuderia);
-        patron.AgregarPIlotos(pilotos);
+        patron.AgregarPIlotos(pilotos, paisesPilotos);
         escuderias.add(patron);
     }
     public String getNombre(){
         return nombre;
     }
-    public void crearCalendario(ArrayList<String> fechas){
+    public void crearCalendario(ArrayList<String> fechas, int totalPistas){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Calendar fecha=Calendar.getInstance();
         int month = 3;
@@ -30,7 +30,7 @@ public class Campeonato {
         fecha.set(Calendar.DAY_OF_MONTH, dia);
         Date fechaFormat = fecha.getTime();
         String fechaFinal = sdf.format(fechaFormat);
-        for(int i=0;i<23;i++){
+        for(int i=0;i<totalPistas;i++){
             if(i==0){
                 fechas.add(fechaFinal);
             }
