@@ -194,10 +194,10 @@ public class Cars4 {
                                 }
                                 break;
                             case 2:
-                                int j=1;
+                                int j=0;
                                 for(Carrera carrera : carreras){
                                     if(j<=contCarrera){
-                                        System.out.println("----------------------- Resultados de la carrera: "+ j +" -----------------------\n");
+                                        System.out.println("----------------------- Resultados de la carrera: "+ (j+1)+" -----------------------\n");
                                         carrera.mostrarResultados();
                                     }
                                     j++;
